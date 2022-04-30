@@ -1,0 +1,16 @@
+public class solution {
+
+	// Return the changed string
+	public static String replace(String input){
+		// Write your code here
+        if(input.length()<=1){
+            return input;
+        }
+        String temp= replace(input.substring(1));
+        if(input.charAt(0)=='p' && temp.charAt(0)=='i'){
+            String output = "3.14"+temp.substring(1);
+            return output;
+        }
+        return input.charAt(0)+temp;
+    }
+}
