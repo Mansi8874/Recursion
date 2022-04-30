@@ -1,0 +1,53 @@
+public class solution {
+
+	public static void printKeypad(int input){
+		// Write your code here
+		printKeypad(input,"");
+	}
+    public static void printKeypad(int input,String output){
+        if(input==0){
+            System.out.println(output);
+            return;
+        }
+        int rem=input%10;
+        char helperArray[]=helper(rem);
+        printKeypad(input/10,helperArray[0]+output);
+         printKeypad(input/10,helperArray[1]+output);
+         printKeypad(input/10,helperArray[2]+output);
+        
+        if(helperArray.length==4){
+             printKeypad(input/10,helperArray[3]+output);
+        }
+    }
+    public static char[] helper(int n){
+        
+        if(n==2){
+            char [] str={'a','b','c'};
+            return str;
+        }else if(n==3){
+            char [] str={'d','e','f'};
+            return str;
+        }else if(n==4){
+            char [] str={'g','h','i'};
+            return str;
+        }else if(n==5){
+            char [] str={'j','k','l'};
+            return str;
+        }else if(n==6){
+            char [] str={'m','n','o'};
+            return str;
+        }else if(n==7){
+            char [] str={'p','q','r','s'};
+            return str;
+        }else if(n==8){
+            char [] str={'t','u','v'};
+            return str;
+        }else if(n==9){
+            char[] str={'w','x','y','z'};
+            return str;
+        }else{
+            char [] str={' '};
+            return str;
+        }
+    }
+}
