@@ -1,0 +1,26 @@
+public class Solution {
+
+	public static int firstIndex(int input[], int x) {
+		/* Your class should be named Solution
+		 * Don't write main().
+		 * Don't read input, it is passed as function argument.
+		 * Return output and don't print it.
+	 	 * Taking input and printing output is handled automatically.
+		*/
+        return firstIndex(input,x,0);
+	}
+    public static int first=-1;
+    public static int firstIndex(int input[],int x,int i){
+        if(i==input.length){
+            return first;
+        }
+        if(input[i]==x){
+            if(first==-1){
+                first=i;
+            }
+        }
+        firstIndex(input,x,i+1);
+        return first;
+    }
+	
+}
