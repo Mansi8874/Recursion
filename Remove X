@@ -1,0 +1,33 @@
+public class solution {
+
+	// Return the changed string
+	// public static String removeX(String input){
+	// 	// Write your code here
+	// return removeX(input,0,"");
+	// }
+	// public static String removeX(String input,int idx,String newString){
+	// if(idx==input.length()){
+	// return newString;
+	// }
+	// char currChar=input.charAt(idx);
+	// if(currChar=='x'){
+	// return removeX(input,idx+1,newString);
+	// }else{
+	// newString+=currChar;
+	// return removeX(input,idx+1,newString);
+	// }   
+	// //return newString;
+	// }
+  
+  
+	public static String removeX(String input){
+        if(input.length()==0){
+            return input;
+        }
+        String smallAns=removeX(input.substring(1));
+        if(input.charAt(0)=='x'){
+            return smallAns;
+        }else{
+            return input.charAt(0)+smallAns;
+        }
+    }
