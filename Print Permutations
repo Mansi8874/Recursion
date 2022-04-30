@@ -1,0 +1,20 @@
+public class Solution {
+
+	public static void FindPermutations(String str) {
+		// Write your code here
+        FindPermutations(str,"");
+
+	}
+    public static void FindPermutations(String str,String Permutations){
+        if(str.length()==0){
+            System.out.println(Permutations);
+            return;
+        }
+        for(int i=0;i<str.length();i++){
+            char currChar=str.charAt(i);
+            String newString=str.substring(0,i)+str.substring(i+1);
+            FindPermutations(newString,Permutations+currChar);
+        }
+        
+    }
+}
