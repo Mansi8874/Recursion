@@ -1,0 +1,43 @@
+public class solution {
+//     public static boolean isStringPalindrome(String input) {
+// 		// Write your code here
+    
+        
+//         return isStringPalindrome(input,0);
+
+// 	}
+//     public static boolean isStringPalindrome(String input,int i){
+//         String str="";
+//         for(int k=input.length()-1;k>=0;k--){
+//             str+=input.charAt(k);
+//         }
+//         boolean isPalindrome=true;
+//         for(int j=0;j<input.length()-1;j++){
+//             if(str.charAt(j)!=input.charAt(j)){
+//                 isPalindrome=false;
+//             }
+//         }
+        // if(isPalindrome){
+        //     return true;
+        // }else{
+        //     return false;
+        // }
+    //}
+    public static boolean isStringPalindrome(String input) {
+// 		// Write your code here
+        return isStringPalindrome(input,0,input.length()-1);
+    }
+    public static boolean isStringPalindrome(String input,int si,int ei) {
+         	if(si==ei){
+                return true;
+            }
+        if(input.charAt(si)!=input.charAt(ei)){
+            return false;
+        }else if(si<ei+1){
+            return isStringPalindrome(input,si+1,ei-1);
+        }else{
+            return true;
+        }
+        
+    }
+}
